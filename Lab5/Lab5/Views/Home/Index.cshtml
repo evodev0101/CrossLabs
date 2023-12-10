@@ -1,0 +1,26 @@
+﻿@model Lab5.Models.ProfileModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    @if (User.Identity.IsAuthenticated)
+    {
+
+        <h4>Select:</h4>
+        <div class="container">
+            <ul class="lab-list">
+                <li><a href="@Url.Action("Lab1", "Labs")">Lab 1</a></li>
+                <li><a href="@Url.Action("Lab2", "Labs")">Lab 2</a></li>
+                <li><a href="@Url.Action("Lab3", "Labs")">Lab 3</a></li>
+            </ul>
+        </div>
+
+
+    }
+    else
+    {
+            <h1 class="display-3">Welcome in our web-app</h1>
+            <p>To get access to labs you need to Sign In</p>
+    }
+</div>
